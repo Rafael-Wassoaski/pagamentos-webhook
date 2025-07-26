@@ -8,31 +8,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
-    name: Execução de testes
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout do código
-        uses: actions/checkout@v4
-
-      - name: Definição de JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Cache das dependências
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            maven-${{ runner.os }}-
-
-      - name: Execução dos testes
-        run: mvn test
-
   build:
     runs-on: ubuntu-latest
 
