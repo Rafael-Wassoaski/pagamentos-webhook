@@ -7,9 +7,6 @@ on:
       - '**'
   workflow_dispatch:
 
-  # habilita a execução manual do workflow
-  workflow_dispatch:
-
 jobs:
   test:
     name: Execução de testes
